@@ -9,7 +9,7 @@ public abstract class Order {
     final int id;
     final Partner partner;
     boolean isFulfilled;
-    final List<OrderItem> items = new ArrayList<OrderItem>();
+    final List<OrderItem> items = new ArrayList<>();
 
 
     public Order(int id, Partner partner) {
