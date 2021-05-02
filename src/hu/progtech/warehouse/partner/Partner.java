@@ -12,7 +12,7 @@ public abstract class Partner {
     String phoneNumber;
     BigDecimal creditLine;
     String accountInfo;
-    List<Payable> payables = new ArrayList<Payable>();
+    List<Payable> payables = new ArrayList<>();
 
     public Partner(int id) {
         this.id = id;
