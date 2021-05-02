@@ -1,7 +1,6 @@
 package hu.progtech.warehouse.management;
 
 import hu.progtech.warehouse.storage.Storage;
-
 import java.util.ArrayList;
 import java.util.List;
 

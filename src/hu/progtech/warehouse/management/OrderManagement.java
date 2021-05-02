@@ -1,10 +1,12 @@
 package hu.progtech.warehouse.management;
 
 import hu.progtech.warehouse.order.Order;
-
+import java.util.ArrayList;
 import java.util.List;
 
 public class OrderManagement implements Management<Order> {
+    private final List<Order> orders = new ArrayList<>();
+
     @Override
     public void add(Order obj) {
 
@@ -22,6 +24,6 @@ public class OrderManagement implements Management<Order> {
 
     @Override
     public List<Order> getAll() {
-        return null;
+        return this.orders;
     }
 }

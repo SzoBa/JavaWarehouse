@@ -1,12 +1,12 @@
 package hu.progtech.warehouse.management;
 
 import hu.progtech.warehouse.product.Product;
-
 import java.util.LinkedList;
 import java.util.List;
 
 public class ProductManagement implements Management<Product>{
     private final List<Product> products = new LinkedList<>();
+
     @Override
     public void add(Product obj) {
 
