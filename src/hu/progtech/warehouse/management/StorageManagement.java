@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StorageManagement implements Management<Storage> {
-    private final List<Storage> storages = new ArrayList<Storage>();
+    private final List<Storage> storages = new ArrayList<>();
 
     @Override
     public void add(Storage storage) {
