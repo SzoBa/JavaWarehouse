@@ -1,6 +1,6 @@
 package hu.progtech.warehouse.product;
 
-public class Product {
+public abstract class Product implements Cloneable{
     private final int id;
     private String name;
     private final ProductType type;
@@ -15,6 +15,11 @@ public class Product {
         this.height = height;
         this.width = width;
         this.weight = weight;
+    }
+
+    @Override
+    public Product clone() throws CloneNotSupportedException {
+        return (Product) super.clone();
     }
 
     public int getId() {

@@ -1,5 +1,6 @@
 package hu.progtech.warehouse.management;
 
+import hu.progtech.warehouse.IdGenerator;
 import hu.progtech.warehouse.order.Order;
 import java.util.ArrayList;
 import java.util.List;

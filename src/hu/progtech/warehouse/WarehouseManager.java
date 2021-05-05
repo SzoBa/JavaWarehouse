@@ -16,7 +16,7 @@ public class WarehouseManager {
         this.partnerManagement = partnerManagement;
     }
 
-    public Management<?> getStockHandler() {
+    public Management<?> getStockManagement() {
         return storageManagement;
     }
 
