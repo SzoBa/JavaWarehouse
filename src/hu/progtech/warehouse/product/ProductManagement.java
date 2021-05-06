@@ -10,6 +10,9 @@ public class ProductManagement implements Management<Product> {
 
     private final List<Product> products = new ArrayList<>();
 
+    public ProductManagement() {
+    }
+
     @Override
     public void add(Product product) {
 

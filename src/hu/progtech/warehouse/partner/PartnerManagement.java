@@ -10,6 +10,9 @@ public class PartnerManagement implements Management<Partner> {
 
     private final List<Partner> partners = new ArrayList<>();
 
+    public PartnerManagement() {
+    }
+
     @Override
     public void add(Partner partner) {
 

@@ -12,12 +12,12 @@ public class MultiTierRack extends Storage{
     }
 
     @Override
-    public StockItem getCommodity(int itemId) {
+    public StockItem getCommodity(int stockItemId) {
         return null;
     }
 
     @Override
-    public void deleteCommodity(int itemId) {
+    public void deleteCommodity(int stockItemId) {
 
     }
 }

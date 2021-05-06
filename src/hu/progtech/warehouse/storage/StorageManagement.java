@@ -9,9 +9,7 @@ public class StorageManagement implements Management<Storage> {
 
     private final List<Storage> storages = new ArrayList<>();
 
-
     public StorageManagement() {
-
     }
 
     @Override

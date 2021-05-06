@@ -10,6 +10,9 @@ public class OrderManagement implements Management<Order> {
 
     private final List<Order> orders = new ArrayList<>();
 
+    public OrderManagement() {
+    }
+
     @Override
     public void add(Order order) {
 

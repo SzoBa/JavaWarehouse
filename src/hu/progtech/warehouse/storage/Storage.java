@@ -17,6 +17,6 @@ public abstract class Storage {
     }
 
     public abstract void addCommodity(StockItem item);
-    public abstract StockItem getCommodity(int itemId);
-    public abstract void deleteCommodity(int itemId);
+    public abstract StockItem getCommodity(int stockItemId);
+    public abstract void deleteCommodity(int stockItemId);
 }
