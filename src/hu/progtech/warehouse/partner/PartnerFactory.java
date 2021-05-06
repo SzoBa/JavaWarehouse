@@ -7,7 +7,9 @@ public class PartnerFactory implements AbstractFactory<Partner, PartnerType> {
     public PartnerFactory() {
     }
 
+    @Override
     public Partner create(PartnerType type) {
         return null;
     }
+
 }

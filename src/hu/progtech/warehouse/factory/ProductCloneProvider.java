@@ -11,7 +11,9 @@ public class ProductCloneProvider implements ProductItemFactory<Product>{
         return originalProduct;
     }
 
+    @Override
     public Product createItem(ItemType item, Product product) {
         return null;
     }
+
 }
