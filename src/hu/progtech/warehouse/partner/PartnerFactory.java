@@ -1,8 +1,8 @@
 package hu.progtech.warehouse.partner;
 
-import hu.progtech.warehouse.factory.AbstractFactory;
+import hu.progtech.warehouse.factory.GenericFactory;
 
-public class PartnerFactory implements AbstractFactory<Partner, PartnerType> {
+public class PartnerFactory implements GenericFactory<Partner, PartnerType> {
 
     public PartnerFactory() {
     }

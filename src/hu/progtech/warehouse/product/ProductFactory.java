@@ -1,8 +1,8 @@
 package hu.progtech.warehouse.product;
 
-import hu.progtech.warehouse.factory.AbstractFactory;
+import hu.progtech.warehouse.factory.GenericFactory;
 
-public class ProductFactory implements AbstractFactory<Product, ProductType> {
+public class ProductFactory implements GenericFactory<Product, ProductType> {
 
     public ProductFactory() {
     }

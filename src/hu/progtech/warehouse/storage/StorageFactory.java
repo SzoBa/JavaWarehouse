@@ -1,8 +1,8 @@
 package hu.progtech.warehouse.storage;
 
-import hu.progtech.warehouse.factory.AbstractFactory;
+import hu.progtech.warehouse.factory.GenericFactory;
 
-public class StorageFactory implements AbstractFactory<Storage, StorageType> {
+public class StorageFactory implements GenericFactory<Storage, StorageType> {
 
     public StorageFactory() {
     }

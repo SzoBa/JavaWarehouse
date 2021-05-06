@@ -1,8 +1,8 @@
 package hu.progtech.warehouse.order;
 
-import hu.progtech.warehouse.factory.AbstractFactory;
+import hu.progtech.warehouse.factory.GenericFactory;
 
-public class OrderFactory implements AbstractFactory<Order, OrderType> {
+public class OrderFactory implements GenericFactory<Order, OrderType> {
 
     public OrderFactory() {
     }

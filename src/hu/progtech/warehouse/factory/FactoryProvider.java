@@ -5,7 +5,7 @@ public class FactoryProvider {
     public FactoryProvider() {
     }
 
-    public AbstractFactory<?, ?> getFactory(FactoryType type) {
+    public GenericFactory<?, ?> getFactory(FactoryType type) {
         return null;
     }
 }
