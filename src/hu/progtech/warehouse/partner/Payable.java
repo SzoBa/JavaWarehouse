@@ -16,10 +16,6 @@ public class Payable {
         this.order = order;
     }
 
-    public void markAsPaid() {
-
-    }
-
     public BigDecimal getValue() {
         return value;
     }
@@ -38,6 +34,10 @@ public class Payable {
 
     public void setValue(BigDecimal value) {
         this.value = value;
+    }
+
+    public void setPaid(boolean paid) {
+        isPaid = paid;
     }
 
     public void setExpiration(LocalDateTime expiration) {
