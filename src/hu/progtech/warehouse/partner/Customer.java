@@ -13,11 +13,9 @@ public class Customer extends Partner{
         return salesRepresentative;
     }
 
-    public String getSalesRepresentative() {
-        return salesRepresentative;
+    @Override
+    public void setContactPerson() {
+
     }
 
-    public void setSalesRepresentative(String salesRepresentative) {
-        this.salesRepresentative = salesRepresentative;
-    }
 }

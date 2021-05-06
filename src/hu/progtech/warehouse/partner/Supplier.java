@@ -13,11 +13,8 @@ public class Supplier extends Partner{
         return buyerContact;
     }
 
-    public String getBuyerContact() {
-        return buyerContact;
-    }
+    @Override
+    public void setContactPerson() {
 
-    public void setBuyerContact(String buyerContact) {
-        this.buyerContact = buyerContact;
     }
 }

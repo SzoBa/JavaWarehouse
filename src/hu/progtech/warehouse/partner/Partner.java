@@ -52,6 +52,7 @@ public abstract class Partner {
     }
 
     public abstract String getContactPerson();
+    public abstract void setContactPerson();
 
 
     public int getId() {
