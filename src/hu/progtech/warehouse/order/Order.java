@@ -2,7 +2,6 @@ package hu.progtech.warehouse.order;
 
 import hu.progtech.warehouse.partner.Partner;
 import hu.progtech.warehouse.partner.Payable;
-import hu.progtech.warehouse.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,11 +17,11 @@ public abstract class Order {
         this.orderId = orderId;
     }
 
-    void addItem(Product product) {
+    void addItem(OrderItem orderItem) {
 
     }
 
-    void removeItem(int id) {
+    void removeItem(int itemId) {
 
     }
 

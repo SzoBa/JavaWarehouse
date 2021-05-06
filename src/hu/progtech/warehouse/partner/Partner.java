@@ -9,15 +9,15 @@ import java.util.Map;
 public abstract class Partner {
 
     private final int id;
-    String name;
-    String address;
-    String email;
-    String phone;
-    PriceGroup priceGroup;
-    final Map<Integer, BigDecimal> uniquePrices = new HashMap<>();
-    BigDecimal creditLine;
-    String accountInfo;
-    final List<Payable> payables = new ArrayList<>();
+    private String name;
+    private String address;
+    private String email;
+    private String phone;
+    private PriceGroup priceGroup;
+    private final Map<Integer, BigDecimal> uniquePrices = new HashMap<>();
+    private BigDecimal creditLine;
+    private String accountInfo;
+    private final List<Payable> payables = new ArrayList<>();
 
     public Partner(int id) {
         this.id = id;
