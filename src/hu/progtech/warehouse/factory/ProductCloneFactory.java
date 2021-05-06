@@ -4,7 +4,7 @@ import hu.progtech.warehouse.product.Product;
 
 public class ProductCloneFactory implements ProductItemFactory<Product>{
 
-    private Product makeCopy(Product originalProduct) {
+    Product makeCopy(Product originalProduct) {
         return originalProduct;
     }
 
@@ -13,4 +13,5 @@ public class ProductCloneFactory implements ProductItemFactory<Product>{
     public Product createItem(ItemType item, Product product) {
         return null;
     }
+
 }
