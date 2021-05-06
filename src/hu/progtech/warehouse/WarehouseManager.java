@@ -2,22 +2,22 @@ package hu.progtech.warehouse;
 
 import hu.progtech.warehouse.factory.FactoryProvider;
 import hu.progtech.warehouse.factory.ProductItemFactory;
-import hu.progtech.warehouse.order.OrderManagement;
-import hu.progtech.warehouse.partner.PartnerManagement;
-import hu.progtech.warehouse.product.ProductManagement;
-import hu.progtech.warehouse.storage.StorageManagement;
+import hu.progtech.warehouse.order.Order;
+import hu.progtech.warehouse.partner.Partner;
+import hu.progtech.warehouse.product.Product;
+import hu.progtech.warehouse.storage.Storage;
 
 public class WarehouseManager {
-    private final StorageManagement storageManagement;
-    private final ProductManagement productManagement;
-    private final OrderManagement orderManagement;
-    private final PartnerManagement partnerManagement;
-    private final ProductItemFactory<?> itemProvider;
+    private final Management<Storage> storageManagement;
+    private final Management<Product> productManagement;
+    private final Management<Order> orderManagement;
+    private final Management<Partner> partnerManagement;
+    private final ProductItemFactory<Product> itemProvider;
     private final FactoryProvider factoryProvider;
 
-    public WarehouseManager(StorageManagement storageManagement, ProductManagement productManagement,
-                            OrderManagement orderManagement, PartnerManagement partnerManagement,
-                            ProductItemFactory<?> itemProvider, FactoryProvider factoryProvider) {
+    public WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
+                            Management<Order> orderManagement, Management<Partner> partnerManagement,
+                            ProductItemFactory<Product> itemProvider, FactoryProvider factoryProvider) {
         this.storageManagement = storageManagement;
         this.productManagement = productManagement;
         this.orderManagement = orderManagement;
@@ -26,23 +26,23 @@ public class WarehouseManager {
         this.factoryProvider = factoryProvider;
     }
 
-    public StorageManagement getStorageManagement() {
+    public Management<Storage> getStorageManagement() {
         return storageManagement;
     }
 
-    public ProductManagement getProductManagement() {
+    public Management<Product> getProductManagement() {
         return productManagement;
     }
 
-    public OrderManagement getOrderManagement() {
+    public Management<Order> getOrderManagement() {
         return orderManagement;
     }
 
-    public PartnerManagement getPartnerManagement() {
+    public Management<Partner> getPartnerManagement() {
         return partnerManagement;
     }
 
-    public ProductItemFactory<?> getItemProvider() {
+    public ProductItemFactory<Product> getItemProvider() {
         return itemProvider;
     }
 
