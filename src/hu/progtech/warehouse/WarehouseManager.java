@@ -12,14 +12,14 @@ public class WarehouseManager {
     private final Management<Product> productManagement;
     private final Management<Order> orderManagement;
     private final Management<Partner> partnerManagement;
-    private final ProductItemFactory<?> itemProvider;
+    private final ProductItemFactory itemProvider;
     private final FactoryProvider factoryProvider;
 
     /** Ez az osztály biztosítja a gyár és Management osztályok példányait */
     /** This class provides the instances of Management classes and factory classes */
     public WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
                             Management<Order> orderManagement, Management<Partner> partnerManagement,
-                            ProductItemFactory<?> itemProvider, FactoryProvider factoryProvider) {
+                            ProductItemFactory itemProvider, FactoryProvider factoryProvider) {
         this.storageManagement = storageManagement;
         this.productManagement = productManagement;
         this.orderManagement = orderManagement;
@@ -44,7 +44,7 @@ public class WarehouseManager {
         return partnerManagement;
     }
 
-    public ProductItemFactory<?> getItemProvider() {
+    public ProductItemFactory getItemProvider() {
         return itemProvider;
     }
 
