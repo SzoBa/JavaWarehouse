@@ -15,6 +15,8 @@ public class WarehouseManager {
     private final ProductItemFactory<Product> itemProvider;
     private final FactoryProvider factoryProvider;
 
+    /** Ez az osztály biztosítja a gyár és Management osztályok példányait */
+    /** This class provides the instances of Management classes and factory classes */
     public WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
                             Management<Order> orderManagement, Management<Partner> partnerManagement,
                             ProductItemFactory<Product> itemProvider, FactoryProvider factoryProvider) {
