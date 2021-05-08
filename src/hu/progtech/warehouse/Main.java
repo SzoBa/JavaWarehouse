@@ -16,6 +16,6 @@ public class Main {
     public static void main(String[] args) {
         Main.warehouseManager = new WarehouseManager(new StorageManagement(), new ProductManagement(),
                 new OrderManagement(), new PartnerManagement(),
-                new ProductCloneProvider<>(), new FactoryProvider());
+                new ProductCloneProvider(), new FactoryProvider());
     }
 }
