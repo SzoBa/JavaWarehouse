@@ -1,16 +1,8 @@
 package hu.progtech.warehouse.partner;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
-/**
- * A raktárral kapcsolatban álló entitásokat reprezentálja (vevők/szállítók).
- * A partnerrel kapcsolatos adatokat tárolja, pl. árcsoport, egyedi árak, hitelkeret, tartozások (Payable), stb.
- * A getContactPerson és setContactPerson absztrakt metódusokat deklarálja (vevőnél üzletkötő, szállítónál beszerző).
- */
 /**
  * Represents entities related to the warehouse (customers / suppliers).
  * Stores partner information, e.g. price group, unique prices, credit line, debts (Payable), etc.
@@ -34,31 +26,36 @@ public abstract class Partner {
     }
 
     public void addPayable(Payable payable) {
-
+        payables.add(payable);
     }
 
     public Payable getPayable(int orderId) {
-        return null;
+        return payables.stream().filter(item -> item.getOrder().getOrderId() == orderId).findFirst().orElse(null);
     }
 
     public void deletePayable(int orderId) {
-
+        Optional<Payable> removable = payables.stream().filter(item -> item.getOrder().getOrderId() == orderId).findFirst();
+        if (removable.isPresent()) {
+            payables.remove(removable.get());
+        } else {
+            System.out.println("Invalid order id!");
+        }
     }
 
     public BigDecimal getUniquePrice(int productId) {
-        return null;
+        return uniquePrices.getOrDefault(productId, new BigDecimal(0));
     }
 
     public void deleteUniquePrice(int productId) {
-
+        uniquePrices.remove(productId);
     }
 
     public BigDecimal getTotalPending() {
-        return null;
+        return payables.stream().reduce(new BigDecimal(0), (actualSum, voucher) -> (actualSum.add(voucher.getValue())), BigDecimal::add);
     }
 
     public void addUniquePrice(int productId, BigDecimal price) {
-
+        uniquePrices.put(productId, price);
     }
 
     public abstract String getContactPerson();
