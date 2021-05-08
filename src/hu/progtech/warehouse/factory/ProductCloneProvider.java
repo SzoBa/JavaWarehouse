@@ -10,7 +10,7 @@ import hu.progtech.warehouse.product.Product;
  * This class implements the ProductItemFactory interface.
  * It uses the ItemType enum and the classes that implement the ItemFactory interface.
  */
-public class ProductCloneProvider implements ProductItemFactory<Product>{
+public class ProductCloneProvider implements ProductItemFactory {
 
     public ProductCloneProvider() {
     }
@@ -22,7 +22,7 @@ public class ProductCloneProvider implements ProductItemFactory<Product>{
     }
 
     @Override
-    public Product createItem(ItemType item, Product product) {
+    public Item createItem(ItemType item, Product product) {
         return null;
     }
 
