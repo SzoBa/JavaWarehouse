@@ -18,7 +18,7 @@ public class IdGenerator {
         return this.id;
     }
 
-    /** Ez a metódussal kérhető el az IdGenerator példánya */
+    /** Ezzel a metódussal kérhető el az IdGenerator példánya */
     /** This method provides the IdGenerator instance */
     public static IdGenerator getIdGenerator() {
         if (idGenerator == null)

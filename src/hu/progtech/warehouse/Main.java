@@ -9,6 +9,8 @@ import hu.progtech.warehouse.storage.StorageManagement;
 
 public class Main {
 
+    /** A WarehouseManager osztálypéldánya (mezői, azaz a programegységek), mindenki számára hozzáférhető a programban */
+    /** The WarehouseManager class' instance (it's fields, ie the program units), is accessible to everyone in the program. */
     public static WarehouseManager warehouseManager;
 
     /** A program belépési pontja */
