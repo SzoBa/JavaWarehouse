@@ -5,22 +5,18 @@ import hu.progtech.warehouse.product.ProductType;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Objects;
 
-/**
- * A raktárakkal kapcsolatos információkat tárolja.
- * Az addCommodity, getCommodity, deleteCommodity absztrakt metódusokat deklarálja.
- * Listák formájában tartalmazza az adott raktárban tárolható terméktípusokat (ProductType), és termékeket (StockItem)
- */
 /**
  * Stores warehouse information.
  * Declares addCommodity, getCommodity, deleteCommodity abstract methods.
  * Contains product types (ProductType) and products (StockItem) that can be stored in the given warehouse in the form of lists.
  */
 public abstract class Storage {
-    private final int storageId;
-    private String storageName;
-    private final List<StockItem> commodities = new LinkedList<>();
-    private final List<ProductType> allowedCommodities = new ArrayList<>();
+    protected final int storageId;
+    protected String storageName;
+    protected final List<StockItem> commodities = new LinkedList<>();
+    protected final List<ProductType> allowedCommodities = new ArrayList<>();
 
     public Storage(int storageId) {
         this.storageId = storageId;
@@ -49,5 +45,18 @@ public abstract class Storage {
 
     public void setStorageName(String storageName) {
         this.storageName = storageName;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Storage)) return false;
+        Storage storage = (Storage) o;
+        return storageId == storage.storageId && Objects.equals(storageName, storage.storageName) && Objects.equals(commodities, storage.commodities) && Objects.equals(allowedCommodities, storage.allowedCommodities);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(storageId, storageName, commodities, allowedCommodities);
     }
 }

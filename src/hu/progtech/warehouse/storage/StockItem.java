@@ -5,7 +5,6 @@ import hu.progtech.warehouse.product.Product;
 
 import java.time.LocalDateTime;
 
-/** Item gyermekosztály. A Storage-okban tárolható termékeket reprezentálja. */
 /** Item child class. Represents products that can be stored in Storages.  */
 public class StockItem extends Item {
 
