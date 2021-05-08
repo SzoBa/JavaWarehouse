@@ -14,7 +14,7 @@ public class StorageFactory implements GenericFactory<Storage, StorageType> {
 
     @Override
     public Storage create(StorageType type) {
-        int id = IdGenerator.getIdGenerator().getNewId();
+        int id = IdGenerator.getNewId();
         switch (type) {
             case STATIC_SHELF:
                 return new StaticShelf(id);

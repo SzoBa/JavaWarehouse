@@ -1,6 +1,5 @@
 package hu.progtech.warehouse.partner;
 
-/** A Partner gyermekosztálya, vevőt reprezentál. Üzletkötő tartozhat hozzá */
 /** The child class of Partner, represents a customer. It may have a salesperson. */
 public class Customer extends Partner{
 
@@ -16,8 +15,8 @@ public class Customer extends Partner{
     }
 
     @Override
-    public void setContactPerson() {
-
+    public void setContactPerson(String name) {
+        this.salesRepresentative = name;
     }
 
 }

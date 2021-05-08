@@ -14,7 +14,7 @@ public class ProductFactory implements GenericFactory<Product, ProductType> {
 
     @Override
     public Product create(ProductType type) {
-        int id = IdGenerator.getIdGenerator().getNewId();
+        int id = IdGenerator.getNewId();
         switch (type) {
             case BEVERAGE:
                 return new Beverage(id);
