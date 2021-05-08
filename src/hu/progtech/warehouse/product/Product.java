@@ -2,10 +2,6 @@ package hu.progtech.warehouse.product;
 
 
 /**
- * A Cloneable interfészt implementálja. A termékekkel kapcsolatos információkat tárolja.
- * A clone metódussal másolat kérhető le róla.
- * */
-/**
  * Implements the Cloneable interface. Stores product information.
  * Use the clone method to request a copy of it.
  * */

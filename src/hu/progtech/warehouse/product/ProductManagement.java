@@ -4,8 +4,8 @@ import hu.progtech.warehouse.Management;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-/** Implementálja a Management interfészt. Listában tartalmazza a Product példányokat */
 /** Implements the Management interface. Contains Product instances in a list */
 public class ProductManagement implements Management<Product> {
 
@@ -16,17 +16,22 @@ public class ProductManagement implements Management<Product> {
 
     @Override
     public void add(Product product) {
-
+        products.add(product);
     }
 
     @Override
     public void delete(int productId) {
-
+        Optional<Product> removable = products.stream().filter(item -> item.getId() == productId).findFirst();
+        if (removable.isPresent()) {
+            products.remove(removable.get());
+        } else {
+            System.out.println("Invalid product id!");
+        }
     }
 
     @Override
     public Product get(int productId) {
-        return null;
+        return products.stream().filter(item -> item.getId() == productId).findFirst().orElse(null);
     }
 
     @Override
