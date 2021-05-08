@@ -9,11 +9,13 @@ import hu.progtech.warehouse.storage.StorageManagement;
 
 public class Main {
 
+    public static WarehouseManager warehouseManager;
+
     /** A program belépési pontja */
     /** The application's entry point*/
     public static void main(String[] args) {
-        WarehouseManager warehouseManager = new WarehouseManager(new StorageManagement(), new ProductManagement(),
+        Main.warehouseManager = new WarehouseManager(new StorageManagement(), new ProductManagement(),
                 new OrderManagement(), new PartnerManagement(),
-                new ProductCloneProvider(), new FactoryProvider());
+                new ProductCloneProvider<>(), new FactoryProvider());
     }
 }
