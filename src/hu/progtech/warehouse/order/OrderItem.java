@@ -5,6 +5,8 @@ import hu.progtech.warehouse.product.Product;
 
 import java.math.BigDecimal;
 
+/** Item gyermekosztály. Az Order-eken szereplő termékeket reprezentálja. */
+/** Item child class. Represents the products on the Orders. */
 public class OrderItem extends Item {
 
     private BigDecimal sellingPrice;

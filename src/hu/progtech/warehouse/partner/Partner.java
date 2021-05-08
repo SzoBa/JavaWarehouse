@@ -6,6 +6,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * A raktárral kapcsolatban álló entitásokat reprezentálja (vevők/szállítók).
+ * A partnerrel kapcsolatos adatokat tárolja, pl. árcsoport, egyedi árak, hitelkeret, tartozások (Payable), stb.
+ * A getContactPerson és setContactPerson absztrakt metódusokat deklarálja (vevőnél üzletkötő, szállítónál beszerző).
+ */
+/**
+ * Represents entities related to the warehouse (customers / suppliers).
+ * Stores partner information, e.g. price group, unique prices, credit line, debts (Payable), etc.
+ * It declares getContactPerson and setContactPerson abstract methods (salesperson at customer, buyer at supplier).
+ */
 public abstract class Partner {
 
     private final int id;

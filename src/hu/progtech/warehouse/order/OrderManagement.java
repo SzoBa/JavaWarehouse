@@ -6,6 +6,8 @@ import hu.progtech.warehouse.product.Product;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Implementálja a Management interfészt. Listában tartalmazza az Order példányokat */
+/** Implements the Management interface. Contains Order instances in a list */
 public class OrderManagement implements Management<Order> {
 
     private final List<Order> orders = new ArrayList<>();

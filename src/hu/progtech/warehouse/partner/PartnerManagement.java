@@ -6,6 +6,8 @@ import hu.progtech.warehouse.order.Order;
 import java.util.ArrayList;
 import java.util.List;
 
+/** Implementálja a Management interfészt. Listában tartalmazza a Partner példányokat */
+/** Implements the Management interface. Contains Partner instances in a list */
 public class PartnerManagement implements Management<Partner> {
 
     private final List<Partner> partners = new ArrayList<>();

@@ -1,5 +1,7 @@
 package hu.progtech.warehouse.storage;
 
+/** A Storage absztakt osztály példányosítható gyermekosztálya. A raktárfajták reprezentálására szolgál */
+/** An instantiatable child class of the Storage abstract class. It is used to represent storage types */
 public class MultiTierRack extends Storage{
 
     public MultiTierRack(int storageId) {

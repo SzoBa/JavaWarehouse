@@ -6,6 +6,16 @@ import hu.progtech.warehouse.partner.Payable;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ *  A rendelésekkel kapcsolatos inormációkat, és tételeket tartalmazza.
+ *  A createPayable (számla/fizetendő reprezentálására való a Payable osztály),
+ *  az updateStock (készlet módosítása) absztrakt metódusokat deklarálja.
+ */
+/**
+ * Contains order information and items.
+ * It declares the createPayable (invoice / payable representation, the Payable class),
+ * updateStock (change storage item quantities) abstract methods.
+ */
 public abstract class Order {
 
     private final int orderId;
@@ -25,6 +35,12 @@ public abstract class Order {
 
     }
 
+    /**
+     * Rendelés lezártnak jelölése. Lényegében setter, de komplexebb logika implemetálására használható majd bővítéskor.
+     */
+    /**
+     * Mark order as finalized. Essentially a setter, but it can be used to implement more complex logic.
+     */
     public void fulfillOrder() {
 
     }

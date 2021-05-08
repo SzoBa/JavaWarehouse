@@ -5,6 +5,8 @@ import hu.progtech.warehouse.order.Order;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/** Fizetendőt reprezentál. Lehet tartozás vagy kintlévőség. */
+/** Represents payable. It can be a debt or a receivable. */
 public class Payable {
 
     private BigDecimal value;

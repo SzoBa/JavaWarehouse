@@ -1,5 +1,7 @@
 package hu.progtech.warehouse.partner;
 
+/** A Partner gyermekosztálya, vevőt reprezentál. Üzletkötő tartozhat hozzá */
+/** The child class of Partner, represents a customer. It may have a salesperson. */
 public class Customer extends Partner{
 
     private String salesRepresentative;
