@@ -9,15 +9,21 @@ import hu.progtech.warehouse.storage.StorageManagement;
 
 public class Main {
 
-    /** A WarehouseManager osztálypéldánya (mezői, azaz a programegységek), mindenki számára hozzáférhető a programban */
-    /** The WarehouseManager class' instance (it's fields, ie the program units), is accessible to everyone in the program. */
-    public static WarehouseManager warehouseManager;
-
     /** A program belépési pontja */
     /** The application's entry point*/
     public static void main(String[] args) {
-        Main.warehouseManager = new WarehouseManager(new StorageManagement(), new ProductManagement(),
+
+        /**
+         * A WarehouseManager osztály és az általa használt egységek példánybeállítása a program indításakor.
+         */
+        /**
+         * Configure the instance of the WarehouseManager class and the units it uses at starting the program.
+         */
+        WarehouseManager warehouseManager = new WarehouseManager(new StorageManagement(), new ProductManagement(),
                 new OrderManagement(), new PartnerManagement(),
                 new ProductCloneProvider(), new FactoryProvider());
+        /** A létrehozott warehouse példány beállítása, hogy mindenhol elérhető legyen */
+        /** Set the WarehouseManager instance to be available everywhere */
+        WarehouseManager.setWarehouseManager(warehouseManager);
     }
 }

@@ -14,10 +14,11 @@ public class WarehouseManager {
     private final Management<Partner> partnerManagement;
     private final ProductItemFactory itemProvider;
     private final FactoryProvider factoryProvider;
+    private static WarehouseManager warehouseManager;
 
-    /** Ez az osztály biztosítja a gyár és Management osztályok példányait */
-    /** This class provides the instances of Management classes and factory classes */
-    public WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
+    /** Ez az osztály biztosítja a gyár és Management osztályok példányait, amik mindenki számára elérhetőek */
+    /** This class provides the instances of Management classes and factory classes, accessible by everyone */
+    protected WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
                             Management<Order> orderManagement, Management<Partner> partnerManagement,
                             ProductItemFactory itemProvider, FactoryProvider factoryProvider) {
         this.storageManagement = storageManagement;
@@ -28,27 +29,39 @@ public class WarehouseManager {
         this.factoryProvider = factoryProvider;
     }
 
+    /** A WarehouseManager osztálypéldány beállítását nem érik el az almodulok, de magát a példányt le tudják kérni */
+    /** SubPackages cannot set WarehouseManager instance, but can retrieve the instance itself */
+    protected static void setWarehouseManager(WarehouseManager warehouseManager) {
+        WarehouseManager.warehouseManager = warehouseManager;
+    }
+
+
+    public static WarehouseManager getWarehouseManager() {
+        return WarehouseManager.warehouseManager;
+    }
+
     public Management<Storage> getStorageManagement() {
-        return storageManagement;
+        return this.storageManagement;
     }
 
     public Management<Product> getProductManagement() {
-        return productManagement;
+        return this.productManagement;
     }
 
     public Management<Order> getOrderManagement() {
-        return orderManagement;
+        return this.orderManagement;
     }
 
     public Management<Partner> getPartnerManagement() {
-        return partnerManagement;
+        return this.partnerManagement;
     }
 
     public ProductItemFactory getItemProvider() {
-        return itemProvider;
+        return this.itemProvider;
     }
 
     public FactoryProvider getFactoryProvider() {
-        return factoryProvider;
+        return this.factoryProvider;
     }
+
 }
