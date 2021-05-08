@@ -5,11 +5,11 @@ import hu.progtech.warehouse.product.Product;
 
 /**
  * Az ItemFactory interfészt implementálja.
- * Ő példányosítja az OrderItem példányokat.
+ * Ő példányosítja az OrderItem osztályokat.
  */
 /**
  * Implements the ItemFactory interface.
- * It instantiates the OrderItem instances.
+ * It instantiates the OrderItem classes.
  */
 public class OrderItemFactory implements ItemFactory<OrderItem> {
 
