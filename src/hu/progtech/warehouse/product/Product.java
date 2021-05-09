@@ -13,9 +13,11 @@ public abstract class Product implements Cloneable{
     private int height;
     private int width;
     private int weight;
+    private ProductType productType;
 
-    public Product(int id) {
+    public Product(int id, ProductType productType) {
         this.id = id;
+        this.productType = productType;
     }
 
     public abstract Product clone();
@@ -50,6 +52,14 @@ public abstract class Product implements Cloneable{
 
     public int getWeight() {
         return weight;
+    }
+
+    public ProductType getProductType() {
+        return productType;
+    }
+
+    public void setProductType(ProductType productType) {
+        this.productType = productType;
     }
 
     public void setEAN(long EAN) {

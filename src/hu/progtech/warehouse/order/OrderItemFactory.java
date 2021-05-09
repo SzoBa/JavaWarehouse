@@ -1,12 +1,9 @@
 package hu.progtech.warehouse.order;
 
+import hu.progtech.warehouse.IdGenerator;
 import hu.progtech.warehouse.factory.ItemFactory;
 import hu.progtech.warehouse.product.Product;
 
-/**
- * Az ItemFactory interfészt implementálja.
- * Ő példányosítja az OrderItem osztályokat.
- */
 /**
  * Implements the ItemFactory interface.
  * It instantiates the OrderItem classes.
@@ -18,7 +15,8 @@ public class OrderItemFactory implements ItemFactory<OrderItem> {
 
     @Override
     public OrderItem create(Product product) {
-        return null;
+        int id = IdGenerator.getNewId();
+        return new OrderItem(id, product);
     }
 
 }

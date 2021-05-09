@@ -1,12 +1,11 @@
 package hu.progtech.warehouse.order;
 
 import hu.progtech.warehouse.Management;
-import hu.progtech.warehouse.product.Product;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-/** Implementálja a Management interfészt. Listában tartalmazza az Order példányokat */
 /** Implements the Management interface. Contains Order instances in a list */
 public class OrderManagement implements Management<Order> {
 
@@ -17,17 +16,22 @@ public class OrderManagement implements Management<Order> {
 
     @Override
     public void add(Order order) {
-
+        orders.add(order);
     }
 
     @Override
     public void delete(int orderId) {
-
+        Optional<Order> removable = orders.stream().filter(order -> order.getOrderId() == orderId).findFirst();
+        if (removable.isPresent()) {
+            orders.remove(removable.get());
+        } else {
+            System.out.println("Invalid order id!");
+        }
     }
 
     @Override
     public Order get(int orderId) {
-        return null;
+        return orders.stream().filter(order -> order.getOrderId() == orderId).findFirst().orElse(null);
     }
 
     @Override

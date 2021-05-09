@@ -1,7 +1,9 @@
 package hu.progtech.warehouse.order;
 
 import hu.progtech.warehouse.partner.Payable;
-/** Order gyermekosztály, a vevői rendelések reprezentálására */
+
+import java.math.BigDecimal;
+
 /** Order child class, to represent customer orders */
 public class CustomerOrder extends Order{
 
@@ -9,15 +11,20 @@ public class CustomerOrder extends Order{
         super(orderId);
     }
 
-    /** Olyan Payable-t készít, ami nekünk fizetnek (pozitív értékű) */
     /** Creates a Payable that will be paid to us (positive value) */
     @Override
     Payable createPayable() {
-        return null;
+        Payable newInvoice  = new Payable(this);
+        BigDecimal invoiceValue = this.getItems().stream()
+                .reduce(new BigDecimal(0), (a, b) -> a.add(b.getSellingPrice()), BigDecimal::add);
+        newInvoice.setValue(invoiceValue);
+        return newInvoice;
     }
 
     @Override
     void updateStock() {
+        this.getItems().forEach(orderItem -> {
 
+        });
     }
 }

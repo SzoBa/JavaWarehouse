@@ -3,8 +3,9 @@ package hu.progtech.warehouse.product;
 /** An instantiatable child class of the Product abstract class. It is used to represent product types. */
 public class Clothing extends Product{
 
-    public Clothing(int id) {
-        super(id);
+
+    public Clothing(int id, ProductType productType) {
+        super(id, productType);
     }
 
     @Override

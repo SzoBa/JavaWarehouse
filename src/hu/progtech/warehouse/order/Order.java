@@ -5,12 +5,8 @@ import hu.progtech.warehouse.partner.Payable;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
-/**
- *  A rendelésekkel kapcsolatos inormációkat, és tételeket tartalmazza.
- *  A createPayable (számla/fizetendő reprezentálására való a Payable osztály),
- *  az updateStock (készlet módosítása) absztrakt metódusokat deklarálja.
- */
 /**
  * Contains order information and items.
  * It declares the createPayable (invoice / payable representation, the Payable class),
@@ -28,11 +24,16 @@ public abstract class Order {
     }
 
     void addItem(OrderItem orderItem) {
-
+        items.add(orderItem);
     }
 
     void removeItem(int itemId) {
-
+        Optional<OrderItem> removable = items.stream().filter(orderItem -> orderItem.getId() == itemId).findFirst();
+        if (removable.isPresent()) {
+            items.remove(removable.get());
+        } else {
+            System.out.println("OrderItem not present in Order!");
+        }
     }
 
     /**

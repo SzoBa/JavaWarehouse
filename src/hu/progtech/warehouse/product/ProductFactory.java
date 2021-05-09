@@ -17,17 +17,17 @@ public class ProductFactory implements GenericFactory<Product, ProductType> {
         int id = IdGenerator.getNewId();
         switch (type) {
             case BEVERAGE:
-                return new Beverage(id);
+                return new Beverage(id, type);
             case CANDY:
-                return new Candy(id);
+                return new Candy(id, type);
             case CLOTHING:
-                return new Clothing(id);
+                return new Clothing(id, type);
             case ELECTRONICS:
-                return new Electronics(id);
+                return new Electronics(id, type);
             case MEDICATION:
-                return new Medication(id);
+                return new Medication(id, type);
             case TOILETRY:
-                return new Toiletry(id);
+                return new Toiletry(id, type);
             default:
                 return null;
         }

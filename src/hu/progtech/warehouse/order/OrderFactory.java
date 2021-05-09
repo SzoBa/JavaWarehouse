@@ -1,11 +1,8 @@
 package hu.progtech.warehouse.order;
 
+import hu.progtech.warehouse.IdGenerator;
 import hu.progtech.warehouse.factory.GenericFactory;
 
-/**
- * A GenericFactory interfészt implementálja.
- * Ő példányosítja az Order gyermekosztályokat.
- */
 /**
  * Implements the GenericFactory interface.
  * It instantiates the Order child classes.
@@ -18,6 +15,14 @@ public class OrderFactory implements GenericFactory<Order, OrderType> {
 
     @Override
     public Order create(OrderType type) {
-        return null;
+        int id = IdGenerator.getNewId();
+        switch (type) {
+            case SUPPLIER:
+                return new SupplierOrder(id);
+            case CUSTOMER:
+                return new CustomerOrder(id);
+            default:
+                return null;
+        }
     }
 }
