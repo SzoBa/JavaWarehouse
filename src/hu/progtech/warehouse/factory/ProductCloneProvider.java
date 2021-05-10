@@ -1,6 +1,5 @@
 package hu.progtech.warehouse.factory;
 
-import hu.progtech.warehouse.WarehouseManager;
 import hu.progtech.warehouse.order.OrderItemFactory;
 import hu.progtech.warehouse.product.Product;
 import hu.progtech.warehouse.storage.StockItemFactory;

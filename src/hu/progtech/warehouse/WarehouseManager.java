@@ -16,7 +16,7 @@ public class WarehouseManager {
     private final FactoryProvider factoryProvider;
     private static WarehouseManager warehouseManager;
 
-    /** Ez az osztály biztosítja a gyár és Management osztályok példányait, amik mindenki számára elérhetőek */
+
     /** This class provides the instances of Management classes and factory classes, accessible by everyone */
     protected WarehouseManager(Management<Storage> storageManagement, Management<Product> productManagement,
                             Management<Order> orderManagement, Management<Partner> partnerManagement,
@@ -29,7 +29,6 @@ public class WarehouseManager {
         this.factoryProvider = factoryProvider;
     }
 
-    /** A WarehouseManager osztálypéldány beállítását nem érik el az almodulok, de magát a példányt le tudják kérni */
     /** SubPackages cannot set WarehouseManager instance, but can retrieve the instance itself */
     protected static void setWarehouseManager(WarehouseManager warehouseManager) {
         WarehouseManager.warehouseManager = warehouseManager;
