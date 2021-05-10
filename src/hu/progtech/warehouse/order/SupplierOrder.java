@@ -45,7 +45,7 @@ public class SupplierOrder extends Order{
             if (suitableStorage.isPresent()) {
                 suitableStorage.get().addCommodity(stockItem);
             } else {
-                System.out.println("Item " + stockItem.getClass().getSimpleName() + " requires suitable storage!");
+                System.out.println("Item " + stockItem.getProduct().getName() + " requires suitable storage!");
             }
         }
         );

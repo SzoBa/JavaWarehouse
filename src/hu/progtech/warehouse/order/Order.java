@@ -37,13 +37,12 @@ public abstract class Order {
     }
 
     /**
-     * Rendelés lezártnak jelölése. Lényegében setter, de komplexebb logika implemetálására használható majd bővítéskor.
-     */
-    /**
      * Mark order as finalized. Essentially a setter, but it can be used to implement more complex logic.
      */
     public void fulfillOrder() {
-
+        this.isFulfilled = true;
+        updateStock();
+        this.partner.addPayable(createPayable());
     }
     abstract Payable createPayable();
     abstract void updateStock();
