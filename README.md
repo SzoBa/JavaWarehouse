@@ -1,4 +1,4 @@
 # Warehouse
-Practicing design patterns.
-UML, with working logic.
-(No view and persistence layers.)
+### Practicing design patterns in Java.
+##### UML, with working logic.
+#####(No view and persistence layers.)
